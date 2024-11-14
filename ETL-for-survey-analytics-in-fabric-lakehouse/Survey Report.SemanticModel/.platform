@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Survey Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c57842c3-4557-4948-bf8b-32371538f907"
+  }
+}
