@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Survey Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e67e3b41-3bc1-4581-b808-d1191b713e36"
+  }
+}

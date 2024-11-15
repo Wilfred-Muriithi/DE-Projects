@@ -1,0 +1,332 @@
+{
+  "compatibilityLevel": 1604,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.134.7426.7 (Main)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DatabaseQuery\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"WebModelingEdit\"]"
+      }
+    ],
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "annotations": [
+          {
+            "name": "PBI_IncludeFutureArtifacts",
+            "value": "False"
+          }
+        ],
+        "expression": [
+          "let",
+          "    database = Sql.Database(\"KFIKKPSXTWSUHBEOUZSQNZ37IY-D37FPZISEMKUJEHYRBXG7WZIUM.datawarehouse.fabric.microsoft.com\", \"6fba9a6f-b6fc-4b44-a84b-a9e424470458\")",
+          "in",
+          "    database"
+        ],
+        "kind": "m",
+        "lineageTag": "3761cff2-a4d4-4501-a83c-b86f93e1b985"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "survey_data",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "IsHidden"
+          }
+        ],
+        "columns": [
+          {
+            "name": "RespondentID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "25c3f7f8-d14c-459e-bccb-550f8490a439",
+            "sourceColumn": "RespondentID",
+            "sourceLineageTag": "RespondentID",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Age",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bba2f7fd-292c-41d6-82ff-aa240f03c34b",
+            "sourceColumn": "Age",
+            "sourceLineageTag": "Age",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ab80bfe1-2e89-49c4-9119-9b005d46759c",
+            "sourceColumn": "Gender",
+            "sourceLineageTag": "Gender",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Location",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0e39a951-6b01-4db8-9963-1ea23808a50b",
+            "sourceColumn": "Location",
+            "sourceLineageTag": "Location",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductUsageFrequency",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ae3809ba-6d81-448c-9caf-7b015e7b93a1",
+            "sourceColumn": "ProductUsageFrequency",
+            "sourceLineageTag": "ProductUsageFrequency",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SatisfactionRating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a86bc533-46b9-4873-af8e-471ed5559051",
+            "sourceColumn": "SatisfactionRating",
+            "sourceLineageTag": "SatisfactionRating",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ProductQualityRating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a6ccbb7d-e250-41ab-b2bd-fffe773216e5",
+            "sourceColumn": "ProductQualityRating",
+            "sourceLineageTag": "ProductQualityRating",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CustomerServiceRating",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5426dfc3-eafa-4bd5-af4f-74903ea9fd3f",
+            "sourceColumn": "CustomerServiceRating",
+            "sourceLineageTag": "CustomerServiceRating",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "RecommendToOthers",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "781988c4-684b-4f5b-9895-02186e2312ef",
+            "sourceColumn": "RecommendToOthers",
+            "sourceLineageTag": "RecommendToOthers",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Comments",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0dcbb814-91dd-45a6-b11a-64fc6e1ae361",
+            "sourceColumn": "Comments",
+            "sourceLineageTag": "Comments",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Age Hierarchy",
+            "levels": [
+              {
+                "name": "Age",
+                "column": "Age",
+                "lineageTag": "bf9990a7-e42d-4298-900d-120647329449",
+                "ordinal": 0
+              }
+            ],
+            "lineageTag": "c8f86006-b0b7-459e-bdc3-0061e19094a6"
+          },
+          {
+            "name": "Gender Hierarchy",
+            "levels": [
+              {
+                "name": "Gender",
+                "column": "Gender",
+                "lineageTag": "7a2d67aa-0c7d-4160-b3bf-50c331389c0d",
+                "ordinal": 0
+              },
+              {
+                "name": "Age",
+                "column": "Age",
+                "lineageTag": "05e258c0-baca-415e-b246-9e851468f79e",
+                "ordinal": 1
+              }
+            ],
+            "lineageTag": "1b94fa48-d4fa-480c-8930-0f9e84fff429"
+          }
+        ],
+        "lineageTag": "345d90e1-8c1a-461e-976b-73de5f4921c0",
+        "partitions": [
+          {
+            "name": "survey_data",
+            "mode": "directLake",
+            "source": {
+              "entityName": "survey_data",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[survey_data]"
+      }
+    ]
+  }
+}
