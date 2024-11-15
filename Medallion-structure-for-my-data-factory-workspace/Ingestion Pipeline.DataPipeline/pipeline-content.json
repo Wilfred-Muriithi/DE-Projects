@@ -1,0 +1,393 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "ParquetSource",
+            "storeSettings": {
+              "type": "AzureBlobStorageReadSettings",
+              "recursive": false,
+              "wildcardFolderPath": "green/puYear=*/puMonth=*",
+              "wildcardFileName": "*.parquet",
+              "enablePartitionDiscovery": false
+            },
+            "formatSettings": {
+              "type": "ParquetReadSettings"
+            },
+            "datasetSettings": {
+              "type": "Parquet",
+              "typeProperties": {
+                "location": {
+                  "type": "AzureBlobStorageLocation",
+                  "container": "nyctlc"
+                },
+                "compressionCodec": "snappy"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "nyc_taxi_green",
+                "properties": {
+                  "type": "AzureBlobStorage",
+                  "typeProperties": {
+                    "authenticationType": "Anonymous",
+                    "containerUri": "https://azureopendatastorage.blob.core.windows.net/nyctlc"
+                  }
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "bronze"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "bronze_lakehouse",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "7d0628ff-b858-49a1-af23-7b91004ce62d",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "vendorID",
+                  "type": "Int32",
+                  "physicalType": "INT32"
+                },
+                "sink": {
+                  "name": "vendorID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "lpepPickupDatetime",
+                  "type": "DateTime",
+                  "physicalType": "INT96"
+                },
+                "sink": {
+                  "name": "lpepPickupDatetime",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "lpepDropoffDatetime",
+                  "type": "DateTime",
+                  "physicalType": "INT96"
+                },
+                "sink": {
+                  "name": "lpepDropoffDatetime",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "passengerCount",
+                  "type": "Int32",
+                  "physicalType": "INT32"
+                },
+                "sink": {
+                  "name": "passengerCount",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "tripDistance",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "tripDistance",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "puLocationId",
+                  "type": "String",
+                  "physicalType": "STRING"
+                },
+                "sink": {
+                  "name": "puLocationId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "doLocationId",
+                  "type": "String",
+                  "physicalType": "STRING"
+                },
+                "sink": {
+                  "name": "doLocationId",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "pickupLongitude",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "pickupLongitude",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "pickupLatitude",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "pickupLatitude",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "dropoffLongitude",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "dropoffLongitude",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "dropoffLatitude",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "dropoffLatitude",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "rateCodeID",
+                  "type": "Int32",
+                  "physicalType": "INT32"
+                },
+                "sink": {
+                  "name": "rateCodeID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "storeAndFwdFlag",
+                  "type": "String",
+                  "physicalType": "STRING"
+                },
+                "sink": {
+                  "name": "storeAndFwdFlag",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "paymentType",
+                  "type": "Int32",
+                  "physicalType": "INT32"
+                },
+                "sink": {
+                  "name": "paymentType",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "fareAmount",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "fareAmount",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "extra",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "extra",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "mtaTax",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "mtaTax",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "improvementSurcharge",
+                  "type": "String",
+                  "physicalType": "STRING"
+                },
+                "sink": {
+                  "name": "improvementSurcharge",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "tipAmount",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "tipAmount",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "tollsAmount",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "tollsAmount",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "ehailFee",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "ehailFee",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "totalAmount",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "totalAmount",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "tripType",
+                  "type": "Int32",
+                  "physicalType": "INT32"
+                },
+                "sink": {
+                  "name": "tripType",
+                  "physicalType": "integer"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy_1sz",
+        "dependsOn": []
+      },
+      {
+        "type": "RefreshDataflow",
+        "typeProperties": {
+          "dataflowId": "45d133e0-b60d-48c0-89ef-e0a32f96e381",
+          "workspaceId": "a75d4000-983a-43a2-a0f2-59a5a9e089b0",
+          "notifyOption": "NoNotification"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Dataflow1",
+        "dependsOn": [
+          {
+            "activity": "Copy_1sz",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Office365Outlook",
+        "typeProperties": {
+          "inputs": {
+            "body": {
+              "To": "wilfredkihara7@gmail.com",
+              "Subject": "@concat('DI in an Hour Pipeline Succeeded with Pipeline Run Id', pipeline().RunId)",
+              "Body": "@concat('RunID = ', pipeline().RunId, ' ; ', 'Copied rows ', activity('Copy_1sz').output.rowsCopied, ' ; ','Throughput ', activity('Copy_1sz').output.throughput)",
+              "Sensitivity": "",
+              "Importance": "Normal"
+            },
+            "method": "post",
+            "path": "/v2/Mail"
+          }
+        },
+        "name": "Office 365 Outlook1",
+        "dependsOn": [
+          {
+            "activity": "Dataflow1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
