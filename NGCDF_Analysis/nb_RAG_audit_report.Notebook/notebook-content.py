@@ -50,7 +50,7 @@ from azure.kusto.data.helpers import dataframe_from_result_table
 print("Step 1: Configuring environment...")
 OPENAI_GPT4_DEPLOYMENT_NAME = "gpt-4o-kenya-hack"
 OPENAI_DEPLOYMENT_ENDPOINT = "https://mango-bush-0a9e12903.5.azurestaticapps.net/api/v1"
-OPENAI_API_KEY = "ad274306-322d-4299-9208-4e87b94f1fa1"
+OPENAI_API_KEY = "API KEY"
 OPENAI_ADA_EMBEDDING_DEPLOYMENT_NAME = "text-embedding-ada-002-kenya-hack"
 
 KUSTO_URI = "https://trd-jjrr7x98d4mwcxrz4w.z9.kusto.fabric.microsoft.com"
