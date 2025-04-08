@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Environment",
+    "displayName": "Env_NGCDF",
+    "description": "Environment"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "451f5dad-0a75-884d-4cfc-34f19a4e53ba"
+  }
+}

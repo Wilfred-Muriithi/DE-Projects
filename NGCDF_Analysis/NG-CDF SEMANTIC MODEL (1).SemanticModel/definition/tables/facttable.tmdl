@@ -1,0 +1,65 @@
+table facttable
+	lineageTag: 1972b537-91af-4037-8e49-68f989912b03
+	sourceLineageTag: [dbo].[facttable]
+
+	column Constituency_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a6648518-33bb-4394-87f2-43eab88789c9
+		sourceLineageTag: Constituency_ID
+		summarizeBy: none
+		sourceColumn: Constituency_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column County_Numbera
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e2c31382-dad3-41fc-bbef-ffa738dd8f49
+		sourceLineageTag: County_Numbera
+		summarizeBy: none
+		sourceColumn: County_Numbera
+
+		annotation SummarizationSetBy = Automatic
+
+	column Allocated_Amount
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9b4dacaa-cbcb-48e3-8afd-2bf1f972c499
+		sourceLineageTag: Allocated_Amount
+		summarizeBy: none
+		sourceColumn: Allocated_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Distributed_Amount
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2fa0b891-9e49-415e-b788-250ae1cca44d
+		sourceLineageTag: Distributed_Amount
+		summarizeBy: none
+		sourceColumn: Distributed_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialYear
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7e12f91f-84cc-4850-8d2b-a59cb25a9caf
+		sourceLineageTag: FinancialYear
+		summarizeBy: none
+		sourceColumn: FinancialYear
+
+		annotation SummarizationSetBy = Automatic
+
+	partition facttable = entity
+		mode: directLake
+		source
+			entityName: facttable
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

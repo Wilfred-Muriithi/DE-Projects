@@ -1,0 +1,34 @@
+table dim_constituency
+	lineageTag: 0d69da64-76b2-4447-b656-8eb065ec7c41
+	sourceLineageTag: [dbo].[dim_constituency]
+
+	column Constituency_ID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 70df107a-2118-46fc-ae7f-6a3029cafabc
+		sourceLineageTag: Constituency_ID
+		summarizeBy: none
+		sourceColumn: Constituency_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Constituency
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 914810f5-d915-4636-9e74-ce8b3321de60
+		sourceLineageTag: Constituency
+		summarizeBy: none
+		sourceColumn: Constituency
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_constituency = entity
+		mode: directLake
+		source
+			entityName: dim_constituency
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+expression DatabaseQuery =
+		let
+		    database = Sql.Database("KFIKKPSXTWSUHBEOUZSQNZ37IY-BIDYQYXVZDRUDCIDSIOX7L4BTE.datawarehouse.fabric.microsoft.com", "67242ef1-6ec0-4ed8-b146-699c4430ddf2")
+		in
+		    database
+	lineageTag: 3fa0f2d7-f719-476c-b4d7-a4db13a09815
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[dim_allocations]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[dim_distribution]"}},"objectType":"Table"}]
+

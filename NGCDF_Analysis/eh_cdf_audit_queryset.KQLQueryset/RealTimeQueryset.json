@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "834d0234-973b-4130-af3b-c0d2288663ae",
+        "clusterUri": "",
+        "type": "Fabric",
+        "databaseItemId": "fa66b17d-037f-be54-43e1-87155accd127",
+        "databaseItemName": "eh_cdf_audit"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "d5a60e14-0bc1-4111-9071-849d717cd9d5",
+        "content": "//***********************************************************************************************************\n// Here are two articles to help you get started with KQL:\n// KQL reference guide - https://aka.ms/KQLguide\n// SQL - KQL conversions - https://aka.ms/sqlcheatsheet\n//***********************************************************************************************************\n.create table AuditEmbeddings (document_name:string, content:string, embedding:dynamic)\n\n.alter column AuditEmbeddings.embedding policy encoding type='Vector16'\n",
+        "title": "Tab",
+        "dataSourceId": "834d0234-973b-4130-af3b-c0d2288663ae"
+      }
+    ]
+  }
+}

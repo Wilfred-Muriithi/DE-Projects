@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "NG-CDF SEMANTIC MODEL (1)"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ef0630b7-e9bd-b084-4d90-0039dc2f5b1f"
+  }
+}

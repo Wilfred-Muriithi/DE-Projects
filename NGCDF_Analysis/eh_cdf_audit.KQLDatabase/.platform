@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDatabase",
+    "displayName": "eh_cdf_audit",
+    "description": "eh_cdf_audit"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fa66b17d-037f-be54-43e1-87155accd127"
+  }
+}

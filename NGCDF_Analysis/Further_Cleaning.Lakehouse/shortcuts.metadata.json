@@ -1,0 +1,41 @@
+[
+  {
+    "name": "distribution_cleaned",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/distribution_cleaned",
+        "itemId": "d8816544-6c99-92ce-4320-f310d0041a51",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "Constituencies",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/Constituencies",
+        "itemId": "d8816544-6c99-92ce-4320-f310d0041a51",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "allocation_cleant",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/allocation_cleant",
+        "itemId": "d8816544-6c99-92ce-4320-f310d0041a51",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  }
+]

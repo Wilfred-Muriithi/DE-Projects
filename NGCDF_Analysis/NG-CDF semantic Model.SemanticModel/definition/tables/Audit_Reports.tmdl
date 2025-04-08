@@ -1,0 +1,98 @@
+table Audit_Reports
+	lineageTag: efd84d36-0fff-46a1-aeef-57b1ac0c7df3
+	sourceLineageTag: [dbo].[Audit_Reports]
+
+	measure Year = CALENDARAUTO()
+		lineageTag: 31741267-b894-4209-9e19-82e6ea07c7d7
+
+		changedProperty = Name
+
+	column Constituency_Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0332de4d-cf1d-44d5-8f26-8aca253cc3f5
+		sourceLineageTag: Constituency_Name
+		summarizeBy: none
+		sourceColumn: Constituency_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Financial_Year
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2e399bd8-046b-4d19-8840-93002f3a301f
+		sourceLineageTag: Financial_Year
+		summarizeBy: none
+		sourceColumn: Financial_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Auditors_Opinion
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 66f45896-bb62-47d3-b6c2-2569e9295373
+		sourceLineageTag: Auditors_Opinion
+		summarizeBy: none
+		sourceColumn: Auditors_Opinion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key_Audit_Matters
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8c905434-097b-4e45-8428-52a4b0ce40cd
+		sourceLineageTag: Key_Audit_Matters
+		summarizeBy: none
+		sourceColumn: Key_Audit_Matters
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budgetary_Control_and_Performance
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 593bc9e1-ac7a-4974-99ed-bf3bb8b40996
+		sourceLineageTag: Budgetary_Control_and_Performance
+		summarizeBy: none
+		sourceColumn: Budgetary_Control_and_Performance
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lawfulness_and_Effectiveness
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a7920275-b2c9-4b52-9c7a-336b99f3d6ed
+		sourceLineageTag: Lawfulness_and_Effectiveness
+		summarizeBy: none
+		sourceColumn: Lawfulness_and_Effectiveness
+
+		annotation SummarizationSetBy = Automatic
+
+	column Internal_Controls_Risk_Management_Governance
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b742a921-3d37-499f-b566-9713566815d2
+		sourceLineageTag: Internal_Controls_Risk_Management_Governance
+		summarizeBy: none
+		sourceColumn: Internal_Controls_Risk_Management_Governance
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recommendations
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: abd3fae4-7d1a-4ab7-b2a9-b2beba172f4d
+		sourceLineageTag: Recommendations
+		summarizeBy: none
+		sourceColumn: Recommendations
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Audit_Reports = entity
+		mode: directLake
+		source
+			entityName: Audit_Reports
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

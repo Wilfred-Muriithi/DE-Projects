@@ -1,0 +1,34 @@
+table dim_county
+	lineageTag: 3969dab9-42d8-4180-989e-5869e33ccba1
+	sourceLineageTag: [dbo].[dim_county]
+
+	column County_Number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a2feb250-f846-48a0-bb1e-becaa9803000
+		sourceLineageTag: County_Number
+		summarizeBy: none
+		sourceColumn: County_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0a8bb30a-ff1d-4de5-91dc-04da1bd7eb3a
+		sourceLineageTag: County
+		summarizeBy: none
+		sourceColumn: County
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_county = entity
+		mode: directLake
+		source
+			entityName: dim_county
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

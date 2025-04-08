@@ -1,0 +1,8 @@
+relationship 646197d9-1958-f32f-bad7-90db2939f33c
+	fromColumn: facttable.Constituency_ID
+	toColumn: dim_constituency.Constituency_ID
+
+relationship 2723db14-20e7-c9c0-c593-ed0554d63396
+	fromColumn: facttable.County_Numbera
+	toColumn: dim_county.County_Number
+

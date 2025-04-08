@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "eh_cdf_audit",
+    "description": "eh_cdf_audit"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c38b7834-9c30-9ae1-437f-394f6008c42e"
+  }
+}

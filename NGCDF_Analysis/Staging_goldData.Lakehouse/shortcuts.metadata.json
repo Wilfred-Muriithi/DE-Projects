@@ -1,0 +1,67 @@
+[
+  {
+    "name": "fact_table",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/fact_table",
+        "itemId": "920eb4b9-0c50-ab23-4c88-06d1c42b8b73",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "dim_disbursement",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/dim_disbursement",
+        "itemId": "920eb4b9-0c50-ab23-4c88-06d1c42b8b73",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "dim_county",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/dim_county",
+        "itemId": "920eb4b9-0c50-ab23-4c88-06d1c42b8b73",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "dim_constituency",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/dim_constituency",
+        "itemId": "920eb4b9-0c50-ab23-4c88-06d1c42b8b73",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  },
+  {
+    "name": "dim_allocation",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/dim_allocation",
+        "itemId": "920eb4b9-0c50-ab23-4c88-06d1c42b8b73",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "Lakehouse"
+      }
+    }
+  }
+]
