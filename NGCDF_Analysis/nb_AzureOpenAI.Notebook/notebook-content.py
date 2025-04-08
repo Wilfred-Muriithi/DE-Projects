@@ -50,7 +50,7 @@ spark = SparkSession.builder.getOrCreate()
 
 # Set up AzureOpenAI client parameters
 ENDPOINT = "https://mango-bush-0a9e12903.5.azurestaticapps.net/api/v1"
-API_KEY = "ad274306-322d-4299-9208-4e87b94f1fa1"  # Replace with your API key
+API_KEY = "Replace with your API key"   
 API_VERSION = "2024-02-01"
 MODEL_NAME = "gpt-4o-kenya-hack"
 
@@ -302,8 +302,7 @@ print(f"Data successfully upserted into Delta table at {delta_table_path}")
 
 # CELL ********************
 
-df = spark.sql("SELECT * FROM lh_cdf_silver.Audit_Reports")
-display(df)
+
 
 # METADATA ********************
 
@@ -314,8 +313,7 @@ display(df)
 
 # CELL ********************
 
-df = spark.sql("SELECT * FROM lh_cdf_silver.Audit_Reports LIMIT 1000")
-display(df)
+
 
 # METADATA ********************
 
