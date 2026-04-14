@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "2ddd3df90805b7ce5bdc",
+  "name": "35ed21afe63a19271058",
   "position": {
-    "x": 181.84827586206896,
-    "y": 28.248275862068965,
-    "z": 0,
-    "height": 68.8551724137931,
-    "width": 229.51724137931035,
-    "tabOrder": 0
+    "x": 10.923707019716163,
+    "y": 580.51700161920178,
+    "z": 21,
+    "height": 62.421182969806651,
+    "width": 287.13744166111059,
+    "tabOrder": 21
   },
   "visual": {
     "visualType": "slicer",
@@ -35,31 +35,6 @@
       }
     },
     "objects": {
-      "selection": [
-        {
-          "properties": {
-            "selectAllCheckboxEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "general": [
-        {
-          "properties": {}
-        }
-      ],
       "data": [
         {
           "properties": {
@@ -72,8 +47,54 @@
             }
           }
         }
+      ],
+      "items": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "59D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bb1f3402b1a7154c366b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_fact_country_kpi"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

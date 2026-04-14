@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "cb98075ce0c060c29051",
+  "position": {
+    "x": 310.54538527478809,
+    "y": 188.82407848366512,
+    "z": 5,
+    "height": 343.31650633393656,
+    "width": 468.15887227354989,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_fact_country_kpi"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "gold_fact_country_kpi.Year",
+              "nativeQueryRef": "Year",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_fact_country_kpi"
+                    }
+                  },
+                  "Property": "PriorityTier"
+                }
+              },
+              "queryRef": "gold_fact_country_kpi.PriorityTier",
+              "nativeQueryRef": "PriorityTier"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_fact_country_kpi"
+                    }
+                  },
+                  "Property": "Avg Malaria Risk Score"
+                }
+              },
+              "queryRef": "gold_fact_country_kpi.Avg Malaria Risk Score",
+              "nativeQueryRef": "Avg Malaria Risk Score"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gold_fact_country_kpi"
+                  }
+                },
+                "Property": "Avg Malaria Risk Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4b2af0495dc88103609c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_fact_country_kpi"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0f6380bd1629189ed88a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_fact_country_kpi"
+              }
+            },
+            "Property": "Avg Malaria Risk Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fc84c92404220ae7d2a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_fact_country_kpi"
+              }
+            },
+            "Property": "PriorityTier"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "e0d530231ab961880e97",
+  "position": {
+    "x": 310.54538527478809,
+    "y": 14.044766168206495,
+    "z": 1,
+    "height": 149.81083912753596,
+    "width": 229.39784741403943,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_fact_country_kpi"
+                    }
+                  },
+                  "Property": "Avg Malaria Risk Score"
+                }
+              },
+              "queryRef": "gold_fact_country_kpi.Avg Malaria Risk Score",
+              "nativeQueryRef": "Avg Malaria Risk Score"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gold_fact_country_kpi"
+                  }
+                },
+                "Property": "Avg Malaria Risk Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0ab87bec0655c694003a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_fact_country_kpi"
+              }
+            },
+            "Property": "Avg Malaria Risk Score"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

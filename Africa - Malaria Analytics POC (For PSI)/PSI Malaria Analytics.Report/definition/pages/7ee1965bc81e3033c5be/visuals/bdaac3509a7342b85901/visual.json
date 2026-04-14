@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "bdaac3509a7342b85901",
+  "position": {
+    "x": 560.23011715401469,
+    "y": 14.044766168206495,
+    "z": 2,
+    "height": 149.81083912753596,
+    "width": 229.39784741403943,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Overall Score and Prioritization"
+                    }
+                  },
+                  "Property": "Countries Monitored"
+                }
+              },
+              "queryRef": "Overall Score and Prioritization.Countries Monitored",
+              "nativeQueryRef": "Countries Monitored"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Overall Score and Prioritization"
+                  }
+                },
+                "Property": "Countries Monitored"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b3fb7217cbd836538e6b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Overall Score and Prioritization"
+              }
+            },
+            "Property": "Countries Monitored"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

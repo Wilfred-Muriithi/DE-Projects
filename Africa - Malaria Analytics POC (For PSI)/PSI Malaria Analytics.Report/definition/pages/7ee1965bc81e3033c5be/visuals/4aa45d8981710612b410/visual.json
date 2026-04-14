@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "4aa45d8981710612b410",
+  "position": {
+    "x": 1048.6758738927517,
+    "y": 12.484236593961329,
+    "z": 4,
+    "height": 151.37136870178111,
+    "width": 227.83731783979425,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PSI Programme"
+                    }
+                  },
+                  "Property": "Avg Unit Cost"
+                }
+              },
+              "queryRef": "PSI Programme.Avg Unit Cost",
+              "nativeQueryRef": "Avg Unit Cost",
+              "format": "\\$#,0.00;(\\$#,0.00);\\$#,0.00"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "PSI Programme"
+                  }
+                },
+                "Property": "Avg Unit Cost"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "570459b9e4c0a080b000",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PSI Programme"
+              }
+            },
+            "Property": "Avg Unit Cost"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

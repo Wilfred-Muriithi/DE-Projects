@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "071d39958ee551210ed0",
+  "position": {
+    "x": 805.23326031050578,
+    "y": 12.484236593961329,
+    "z": 3,
+    "height": 149.81083912753596,
+    "width": 227.83731783979425,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PSI Programme"
+                    }
+                  },
+                  "Property": "Avg PSI Program Score"
+                }
+              },
+              "queryRef": "PSI Programme.Avg PSI Program Score",
+              "nativeQueryRef": "Avg PSI Program Score"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "PSI Programme"
+                  }
+                },
+                "Property": "Avg PSI Program Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b68dcd25db31a4d707bc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PSI Programme"
+              }
+            },
+            "Property": "Avg PSI Program Score"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "8c7e4135d00e59827643",
+  "position": {
+    "x": 310.54538527478809,
+    "y": 543.0642918373178,
+    "z": 14,
+    "height": 176.33984188970379,
+    "width": 969.08886560624819,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Overall Score and Prioritization"
+                    }
+                  },
+                  "Property": "Priority 1 Countries"
+                }
+              },
+              "queryRef": "Overall Score and Prioritization.Priority 1 Countries",
+              "nativeQueryRef": "Priority 1 Countries"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Overall Score and Prioritization"
+                    }
+                  },
+                  "Property": "Priority 2 Countries"
+                }
+              },
+              "queryRef": "Overall Score and Prioritization.Priority 2 Countries",
+              "nativeQueryRef": "Priority 2 Countries"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Overall Score and Prioritization"
+                    }
+                  },
+                  "Property": "Priority 3 Countries"
+                }
+              },
+              "queryRef": "Overall Score and Prioritization.Priority 3 Countries",
+              "nativeQueryRef": "Priority 3 Countries"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Overall Score and Prioritization"
+                    }
+                  },
+                  "Property": "On Track Countries"
+                }
+              },
+              "queryRef": "Overall Score and Prioritization.On Track Countries",
+              "nativeQueryRef": "On Track Countries"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Overall Score and Prioritization"
+                  }
+                },
+                "Property": "Priority 1 Countries"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b520568d6660be13b0e8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Overall Score and Prioritization"
+              }
+            },
+            "Property": "Priority 1 Countries"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cd5b1bdd900e055eeb74",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Overall Score and Prioritization"
+              }
+            },
+            "Property": "Priority 2 Countries"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dc2639ba93341495b201",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Overall Score and Prioritization"
+              }
+            },
+            "Property": "Priority 3 Countries"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8771062db75e50577ec1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Overall Score and Prioritization"
+              }
+            },
+            "Property": "On Track Countries"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
