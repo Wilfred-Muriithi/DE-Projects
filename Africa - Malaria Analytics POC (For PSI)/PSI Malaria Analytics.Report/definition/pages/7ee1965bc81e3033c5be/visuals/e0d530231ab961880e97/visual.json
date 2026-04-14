@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "e0d530231ab961880e97",
   "position": {
-    "x": 310.54538527478809,
-    "y": 14.044766168206495,
+    "x": 310.56330566837363,
+    "y": 13.561716404732474,
     "z": 1,
-    "height": 149.81083912753596,
-    "width": 229.39784741403943,
+    "height": 150.53505209253046,
+    "width": 249.53558184707751,
     "tabOrder": 1
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "gold_fact_country_kpi.Avg Malaria Risk Score",
-              "nativeQueryRef": "Avg Malaria Risk Score"
+              "nativeQueryRef": "Average Malaria Risk Score",
+              "displayName": "Average Malaria Risk Score"
             }
           ]
         }

@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "PSI Programme.Avg PSI Program Score",
-              "nativeQueryRef": "Avg PSI Program Score"
+              "nativeQueryRef": "Average PSI Score",
+              "displayName": "Average PSI Score"
             }
           ]
         }
@@ -50,6 +51,26 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },

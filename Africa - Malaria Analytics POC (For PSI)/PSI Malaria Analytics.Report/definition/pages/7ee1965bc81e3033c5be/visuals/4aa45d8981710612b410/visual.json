@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "4aa45d8981710612b410",
   "position": {
-    "x": 1048.6758738927517,
-    "y": 12.484236593961329,
+    "x": 1049.6768497262933,
+    "y": 13.561716404732474,
     "z": 4,
-    "height": 151.37136870178111,
-    "width": 227.83731783979425,
+    "height": 150.53505209253046,
+    "width": 230.54917888045205,
     "tabOrder": 4
   },
   "visual": {
@@ -28,6 +28,7 @@
               },
               "queryRef": "PSI Programme.Avg Unit Cost",
               "nativeQueryRef": "Avg Unit Cost",
+              "displayName": "Average Unit Cost",
               "format": "\\$#,0.00;(\\$#,0.00);\\$#,0.00"
             }
           ]
@@ -51,6 +52,26 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },

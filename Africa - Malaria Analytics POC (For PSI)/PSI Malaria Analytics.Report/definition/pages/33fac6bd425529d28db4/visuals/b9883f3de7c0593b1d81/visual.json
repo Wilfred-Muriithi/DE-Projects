@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "b9883f3de7c0593b1d81",
   "position": {
-    "x": 181.84827586206896,
-    "y": 28.248275862068965,
+    "x": 410.92000706339394,
+    "y": 54.246865618929895,
     "z": 0,
-    "height": 68.8551724137931,
-    "width": 229.51724137931035,
+    "height": 69.164753664135617,
+    "width": 229.19300723997878,
     "tabOrder": 0
   },
   "visual": {
@@ -57,7 +57,49 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "g",
+                    "Entity": "gold_fact_country_kpi",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "g"
+                                }
+                              },
+                              "Property": "Year"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "2015L"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ],
       "data": [

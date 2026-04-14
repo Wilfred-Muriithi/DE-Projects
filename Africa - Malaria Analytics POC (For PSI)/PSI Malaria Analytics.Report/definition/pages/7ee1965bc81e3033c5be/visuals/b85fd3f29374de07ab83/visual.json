@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "b85fd3f29374de07ab83",
   "position": {
-    "x": 795.87008286503476,
-    "y": 188.82407848366512,
+    "x": 800.14126787921589,
+    "y": 188.50785802578139,
     "z": 6,
-    "height": 343.31650633393656,
-    "width": 480.64310886751122,
+    "height": 343.11142503973156,
+    "width": 480.08476072752956,
     "tabOrder": 6
   },
   "visual": {
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "dim_country.CountryName",
-              "nativeQueryRef": "CountryName",
-              "active": true
+              "nativeQueryRef": "Country",
+              "active": true,
+              "displayName": "Country"
             }
           ]
         },
@@ -46,7 +47,8 @@
                 }
               },
               "queryRef": "gold_fact_country_kpi.Avg Malaria Risk Score",
-              "nativeQueryRef": "Avg Malaria Risk Score"
+              "nativeQueryRef": "Average Malaria Risk Score",
+              "displayName": "Average Malaria Risk Score"
             }
           ]
         }
@@ -69,6 +71,21 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 Risk countries'"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
