@@ -1,4 +1,4 @@
-# 🏆 PSI Malaria Analytics – End-to-End Microsoft Fabric Pipeline
+#  PSI Malaria Analytics – End-to-End Microsoft Fabric Pipeline
 
 ![Fabric](https://img.shields.io/badge/Microsoft-Fabric-blue)
 ![Power BI](https://img.shields.io/badge/PowerBI-Analytics-yellow)
@@ -8,14 +8,14 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 This project is a **PSI-aligned malaria program performance analytics solution** demonstrating a full **end-to-end cloud data engineering and BI workflow** for public health decision-making.
 
 It transforms raw epidemiological, economic, and program data into **actionable KPIs and country prioritization tiers** across **18 Sub-Saharan African countries**.
 
 ---
 
-## 🎯 Business Objective
+##  Business Objective
 
 - Identify high malaria burden regions  
 - Evaluate health system strength  
@@ -30,7 +30,7 @@ It transforms raw epidemiological, economic, and program data into **actionable 
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Medallion Architecture
 ```
@@ -47,7 +47,7 @@ Bronze → Silver → Gold → Semantic Model → Power BI
 
 ---
 
-## 🔄 Data Pipeline
+##  Data Pipeline
 
 ### Data Sources
 - WHO GHO  
@@ -63,7 +63,7 @@ Bronze → Silver → Gold → Semantic Model → Power BI
 
 ---
 
-## 📊 KPI Framework (Z-Score Normalization)
+##  KPI Framework (Z-Score Normalization)
 
 ### Core KPIs
 
@@ -83,7 +83,7 @@ OverallPSIScore =
 
 ---
 
-## 🧠 Semantic Model
+##  Semantic Model
 
 - DirectLake enabled  
 - Star schema  
@@ -92,7 +92,7 @@ OverallPSIScore =
 
 ---
 
-## 📊 Power BI Dashboard
+##  Power BI Dashboard
 
 ### Executive Overview
 - KPI cards  
@@ -102,7 +102,7 @@ OverallPSIScore =
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ### 🔹 Workspace / Architecture
 <!-- Replace below with your uploaded image -->
@@ -123,7 +123,7 @@ OverallPSIScore =
 
 ---
 
-## ⚙️ Engineering Best Practices
+##  Engineering Best Practices
 
 - Incremental pipelines  
 - Modular notebooks  
@@ -133,7 +133,7 @@ OverallPSIScore =
 
 ---
 
-## 🔍 Data Quality
+##  Data Quality
 
 - Automated checks  
 - Null validation  
@@ -141,7 +141,7 @@ OverallPSIScore =
 
 ---
 
-## 🚀 CI/CD
+##  CI/CD
 
 - GitHub integration  
 - Version control  
@@ -150,7 +150,7 @@ OverallPSIScore =
 
 ---
 
-## ⚠️ Notes
+##  Notes
 
 - PSI data is **synthetic**  
 - Real data sourced from WHO & World Bank  
@@ -158,7 +158,7 @@ OverallPSIScore =
 
 ---
 
-## ✅ Key Outcomes
+##  Key Outcomes
 
 - End-to-end Fabric solution  
 - Scalable data pipeline  
@@ -166,7 +166,7 @@ OverallPSIScore =
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - Real-time streaming  
 - ML predictions  
