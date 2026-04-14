@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectLake - lh_malaria_gold"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit","CalcGroup"]
+
+ref table dim_country
+ref table gold_fact_country_kpi
+ref table 'Health System'
+ref table 'PSI Programme'
+ref table 'Overall Score and Prioritization'
+ref table Ranking
+ref table 'Conditional Formatting Measures'
+ref table 'Helper Measure'
+

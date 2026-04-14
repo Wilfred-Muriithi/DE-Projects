@@ -1,0 +1,170 @@
+table gold_fact_country_kpi
+	lineageTag: d924c144-c4b7-4ee7-b9a2-65802a6ad7e2
+	sourceLineageTag: [gold].[gold_fact_country_kpi]
+
+	measure 'Avg Malaria Risk Score' =
+			
+			AVERAGE(gold_fact_country_kpi[MalariaRiskScore])
+		lineageTag: 42c1816e-0af9-4647-be40-a121c5c815fe
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Max Malaria Risk Score' =
+			
+			MAX(gold_fact_country_kpi[MalariaRiskScore])
+		lineageTag: a3999213-0d14-4786-927f-6be9264a1226
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'YoY Risk Score Change' =
+			
+			VAR SelectedYear = MAX(gold_fact_country_kpi[Year])
+			VAR CurrentScore =
+			    CALCULATE(
+			        AVERAGE(gold_fact_country_kpi[MalariaRiskScore]),
+			        gold_fact_country_kpi[Year] = SelectedYear
+			    )
+			VAR PriorScore =
+			    CALCULATE(
+			        AVERAGE(gold_fact_country_kpi[MalariaRiskScore]),
+			        gold_fact_country_kpi[Year] = SelectedYear - 1
+			    )
+			RETURN
+			    IF(
+			        NOT ISBLANK(PriorScore) && PriorScore <> 0,
+			        ROUND(CurrentScore - PriorScore, 2),
+			        BLANK()
+			    )
+		lineageTag: 764f172e-0e1b-4b98-b719-9cdda290a80f
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'YoY Risk Score Change %' =
+			
+			VAR SelectedYear = MAX(gold_fact_country_kpi[Year])
+			VAR CurrentScore =
+			    CALCULATE(
+			        AVERAGE(gold_fact_country_kpi[MalariaRiskScore]),
+			        gold_fact_country_kpi[Year] = SelectedYear
+			    )
+			VAR PriorScore =
+			    CALCULATE(
+			        AVERAGE(gold_fact_country_kpi[MalariaRiskScore]),
+			        gold_fact_country_kpi[Year] = SelectedYear - 1
+			    )
+			RETURN
+			    IF(
+			        NOT ISBLANK(PriorScore) && PriorScore <> 0,
+			        ROUND(DIVIDE(CurrentScore - PriorScore, PriorScore) * 100, 1),
+			        BLANK()
+			    )
+		lineageTag: 192c85ad-fe41-4b4a-a6a0-f37c27bbea23
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CountryKey
+		dataType: string
+		lineageTag: 5e15a5e7-990f-42af-8e23-f00ffbf17adb
+		sourceLineageTag: CountryKey
+		summarizeBy: none
+		sourceColumn: CountryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 86f64975-f720-4813-93fe-5dd1a09cb036
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column MalariaRiskScore
+		dataType: double
+		lineageTag: 5bddf40a-bdee-4178-b00e-914121040f25
+		sourceLineageTag: MalariaRiskScore
+		summarizeBy: sum
+		sourceColumn: MalariaRiskScore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HealthSystemScore
+		dataType: double
+		lineageTag: f90f4835-1b91-4bfc-9b13-35518ef03340
+		sourceLineageTag: HealthSystemScore
+		summarizeBy: sum
+		sourceColumn: HealthSystemScore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PSIProgramScore
+		dataType: double
+		lineageTag: eba442a9-05d2-4ecc-895c-e821c0d6a9c2
+		sourceLineageTag: PSIProgramScore
+		summarizeBy: sum
+		sourceColumn: PSIProgramScore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OverallPSIScore
+		dataType: double
+		lineageTag: 02a535ea-5a35-4e7d-be64-ac22c2db07ce
+		sourceLineageTag: OverallPSIScore
+		summarizeBy: sum
+		sourceColumn: OverallPSIScore
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AvgUnitCost
+		dataType: double
+		lineageTag: 84f20647-f8ad-436b-a4f5-904d78ed3b79
+		sourceLineageTag: AvgUnitCost
+		summarizeBy: sum
+		sourceColumn: AvgUnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PriorityTier
+		dataType: string
+		lineageTag: 8a73670b-4d68-4dbe-b4fa-5ca6650437ad
+		sourceLineageTag: PriorityTier
+		summarizeBy: none
+		sourceColumn: PriorityTier
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_fact_country_kpi = entity
+		mode: directLake
+		source
+			entityName: gold_fact_country_kpi
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_malaria_gold'
+

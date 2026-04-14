@@ -1,0 +1,56 @@
+table Ranking
+	lineageTag: 860bc7b5-a417-4cf9-a4db-4b911b02503c
+
+	calculationGroup
+		precedence: 3
+
+		calculationItem 'Calculation item' = SELECTEDMEASURE()
+
+	measure 'Country Risk Rank' =
+			
+			IF(
+			    HASONEVALUE(dim_country[CountryName]),
+			    RANKX(
+			        ALLSELECTED(dim_country[CountryName]),
+			        CALCULATE(AVERAGE(gold_fact_country_kpi[MalariaRiskScore])),
+			        ,
+			        DESC,
+			        DENSE
+			    )
+			)
+		formatString: 0
+		lineageTag: bd658bdb-d867-4c0b-a6c6-1c966d7fbe18
+
+	measure 'Country Overall Rank' =
+			
+			IF(
+			    HASONEVALUE(dim_country[CountryName]),
+			    RANKX(
+			        ALLSELECTED(dim_country[CountryName]),
+			        CALCULATE(AVERAGE(gold_fact_country_kpi[OverallPSIScore])),
+			        ,
+			        ASC,
+			        DENSE
+			    )
+			)
+		formatString: 0
+		lineageTag: b7b921f0-bb35-4919-8ce7-9ebaf2f2a2a9
+
+	column 'Calculation group column'
+		dataType: string
+		lineageTag: be43fdd1-535b-4cb8-a45b-647becebce91
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: f4b3ea5a-e1cc-42d3-a313-9de2ffe94354
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

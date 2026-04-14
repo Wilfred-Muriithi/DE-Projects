@@ -1,0 +1,46 @@
+table 'Health System'
+	lineageTag: 0b2f09b2-2fba-4491-a767-a1bd39735aa7
+
+	calculationGroup
+
+		calculationItem 'Calculation item' = SELECTEDMEASURE()
+
+	measure 'Avg Health System Score' =
+			
+			AVERAGE(gold_fact_country_kpi[HealthSystemScore])
+		lineageTag: 55c8a0bc-22b2-482a-86e2-56aa3f6b4293
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Countries Above Avg Health Score' =
+			
+			VAR AvgScore = CALCULATE(
+			    AVERAGE(gold_fact_country_kpi[HealthSystemScore]),
+			    ALL(gold_fact_country_kpi)
+			)
+			RETURN
+			CALCULATE(
+			    DISTINCTCOUNT(gold_fact_country_kpi[CountryKey]),
+			    gold_fact_country_kpi[HealthSystemScore] > AvgScore
+			)
+		formatString: 0
+		lineageTag: 2a030113-66ce-4cbd-be47-f8fdc300c8b7
+
+	column 'Calculation group column'
+		dataType: string
+		lineageTag: 5546fb26-1581-4079-8612-d395b2c65085
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: bb2112f0-476b-439f-b2a1-0aa5d40ab762
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

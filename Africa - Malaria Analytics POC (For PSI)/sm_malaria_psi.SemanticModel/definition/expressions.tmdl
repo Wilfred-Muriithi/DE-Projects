@@ -1,0 +1,11 @@
+expression 'DirectLake - lh_malaria_gold' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/815e9f81-df95-4e8e-a776-a6188b9e4758/75cc645c-e3e3-4c26-8e7c-a567f9125ad6", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: acf3cf2e-4353-4a0e-bd18-9b61c43b881b
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[gold].[dq_gold_audit]"}},"objectType":"Table"}]
+

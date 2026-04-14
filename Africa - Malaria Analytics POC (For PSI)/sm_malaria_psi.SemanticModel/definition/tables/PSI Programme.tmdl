@@ -1,0 +1,48 @@
+table 'PSI Programme'
+	lineageTag: 230ca551-c6a4-417c-a5ae-fe3d8a546717
+
+	calculationGroup
+		precedence: 1
+
+		calculationItem 'Calculation item' = SELECTEDMEASURE()
+
+	measure 'Avg PSI Program Score' =
+			
+			AVERAGE(gold_fact_country_kpi[PSIProgramScore])
+		lineageTag: 5890b324-4363-44b5-a230-b9e4821249ed
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Unit Cost' =
+			
+			AVERAGE(gold_fact_country_kpi[AvgUnitCost])
+		lineageTag: 8000a9f3-b7c0-465a-a769-6922a5712f89
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Most Efficient Country' =
+			
+			CALCULATE(
+			    SELECTEDVALUE(dim_country[CountryName]),
+			    TOPN(1, gold_fact_country_kpi, gold_fact_country_kpi[PSIProgramScore], DESC)
+			)
+		lineageTag: 30b46afb-9ac4-4d0a-bfb1-d4e02ade7dd6
+
+	column 'Calculation group column'
+		dataType: string
+		lineageTag: fb7d7f9a-191d-43f8-8505-181d9b4aa657
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: 22754678-1f6f-4d0c-8738-0a1e6306292a
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

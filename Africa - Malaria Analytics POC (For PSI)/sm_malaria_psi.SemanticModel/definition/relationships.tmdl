@@ -1,0 +1,4 @@
+relationship 17ff416f-36a8-8914-c718-6923f7a05c5d
+	fromColumn: gold_fact_country_kpi.CountryKey
+	toColumn: dim_country.CountryKey
+
