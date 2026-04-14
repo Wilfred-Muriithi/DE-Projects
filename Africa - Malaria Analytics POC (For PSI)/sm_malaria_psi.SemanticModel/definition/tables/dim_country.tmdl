@@ -1,0 +1,77 @@
+table dim_country
+	lineageTag: 08806d48-356e-4a06-aaa9-e87aee51b891
+	sourceLineageTag: [gold].[dim_country]
+
+	column CountryKey
+		dataType: string
+		lineageTag: 8afea571-a33b-43d0-9de5-5f3d3162c46c
+		sourceLineageTag: CountryKey
+		summarizeBy: none
+		sourceColumn: CountryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryCode
+		dataType: string
+		lineageTag: 3c5562a2-1f4c-4188-b593-a63642802356
+		sourceLineageTag: CountryCode
+		summarizeBy: none
+		sourceColumn: CountryCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryName
+		dataType: string
+		lineageTag: 31e9d435-ff35-423f-b938-5aaef560612b
+		sourceLineageTag: CountryName
+		summarizeBy: none
+		sourceColumn: CountryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column EffectiveFrom
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 95750d9b-a358-46d4-b0c6-f089785acc7b
+		sourceLineageTag: EffectiveFrom
+		summarizeBy: none
+		sourceColumn: EffectiveFrom
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EffectiveTo
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: cc031d63-3664-4852-a85a-d48bffd9d200
+		sourceLineageTag: EffectiveTo
+		summarizeBy: none
+		sourceColumn: EffectiveTo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrent
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e99cd2fa-26c9-486d-9109-26ee0edd3610
+		sourceLineageTag: IsCurrent
+		summarizeBy: none
+		sourceColumn: IsCurrent
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_country = entity
+		mode: directLake
+		source
+			entityName: dim_country
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_malaria_gold'
+

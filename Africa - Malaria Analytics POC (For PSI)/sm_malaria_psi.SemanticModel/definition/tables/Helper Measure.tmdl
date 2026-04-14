@@ -1,0 +1,39 @@
+table 'Helper Measure'
+	lineageTag: 0b6e0671-4861-49bb-9d11-3dea85f6d340
+
+	calculationGroup
+		precedence: 5
+
+		calculationItem 'Calculation item' = SELECTEDMEASURE()
+
+	measure 'Priority Tier Number' =
+			
+			SWITCH(
+			    SELECTEDVALUE(gold_fact_country_kpi[PriorityTier]),
+			    "Priority 1 — Immediate Action", 1,
+			    "Priority 2 — Accelerate",       2,
+			    "Priority 3 — Monitor",          3,
+			    "On Track",                      4,
+			    BLANK()
+			)
+		formatString: 0
+		lineageTag: e537dca8-acdc-48ab-aacb-80a31babd9eb
+
+	column 'Calculation group column'
+		dataType: string
+		lineageTag: 972db3e5-2b49-449e-8bb8-a104e313787b
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: a2f98799-d76d-4cb2-8ed5-1497f26a2c2f
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

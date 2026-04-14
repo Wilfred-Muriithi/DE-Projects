@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "nb_malaria_gold"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4bfdaa83-02cf-af22-427c-55b0f5f50cc9"
+  }
+}

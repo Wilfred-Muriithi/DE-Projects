@@ -1,0 +1,50 @@
+table 'Conditional Formatting Measures'
+	lineageTag: 912b94e8-574c-4690-afc9-3de8feeee683
+
+	calculationGroup
+		precedence: 4
+
+		calculationItem 'Calculation item' = SELECTEDMEASURE()
+
+	measure 'Risk Score Color' =
+			
+			VAR Score = [Avg Malaria Risk Score]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        Score >= 60, "#f7941e",
+			        Score >= 35, "#f0c050",
+			        "#73a534"
+			    )
+		lineageTag: 0d4f216e-51df-4124-82f9-5d97961b4ed3
+
+	measure 'Overall Score Color' =
+			
+			VAR Score = [Avg Overall PSI Score]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        Score < -15, "#f7941e",
+			        Score <   0, "#f0c050",
+			        "#73a534"
+			    )
+		lineageTag: b7894cd8-fc9a-4583-b8e2-bb99635525ef
+
+	column 'Calculation group column'
+		dataType: string
+		lineageTag: 2594b4c9-06b7-49b7-b092-55bffce640a9
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: 7aea42da-6071-4453-9453-00b5faf01765
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

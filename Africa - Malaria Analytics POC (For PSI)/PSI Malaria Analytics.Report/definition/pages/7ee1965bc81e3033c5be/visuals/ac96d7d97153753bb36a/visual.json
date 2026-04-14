@@ -1,0 +1,428 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "ac96d7d97153753bb36a",
+  "position": {
+    "x": 0,
+    "y": 131.34065934065936,
+    "z": 1000,
+    "height": 588.65934065934073,
+    "width": 887.73626373626382,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_country"
+                    }
+                  },
+                  "Property": "CountryName"
+                }
+              },
+              "queryRef": "dim_country.CountryName",
+              "nativeQueryRef": "CountryName"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_fact_country_kpi"
+                    }
+                  },
+                  "Property": "Avg Malaria Risk Score"
+                }
+              },
+              "queryRef": "gold_fact_country_kpi.Avg Malaria Risk Score",
+              "nativeQueryRef": "Avg Malaria Risk Score",
+              "format": "0.00"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Health System"
+                    }
+                  },
+                  "Property": "Avg Health System Score"
+                }
+              },
+              "queryRef": "Health System.Avg Health System Score",
+              "nativeQueryRef": "Avg Health System Score",
+              "format": "0.00"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PSI Programme"
+                    }
+                  },
+                  "Property": "Avg PSI Program Score"
+                }
+              },
+              "queryRef": "PSI Programme.Avg PSI Program Score",
+              "nativeQueryRef": "Avg PSI Program Score",
+              "format": "0.00"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Overall Score and Prioritization"
+                    }
+                  },
+                  "Property": "Avg Overall PSI Score"
+                }
+              },
+              "queryRef": "Overall Score and Prioritization.Avg Overall PSI Score",
+              "nativeQueryRef": "Avg Overall PSI Score",
+              "format": "0.00"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "gold_fact_country_kpi"
+                    }
+                  },
+                  "Property": "PriorityTier"
+                }
+              },
+              "queryRef": "gold_fact_country_kpi.PriorityTier",
+              "nativeQueryRef": "PriorityTier"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "gold_fact_country_kpi"
+                  }
+                },
+                "Property": "Avg Malaria Risk Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Conditional Formatting Measures"
+                        }
+                      },
+                      "Property": "Risk Score Color"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "gold_fact_country_kpi.Avg Malaria Risk Score"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Conditional Formatting Measures"
+                        }
+                      },
+                      "Property": "Overall Score Color"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Overall Score and Prioritization.Avg Overall PSI Score"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Helper Measure"
+                                    }
+                                  },
+                                  "Property": "Priority Tier Number"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "4D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#73A534'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Helper Measure"
+                                    }
+                                  },
+                                  "Property": "Priority Tier Number"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "3D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#D6E8B4'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Helper Measure"
+                                    }
+                                  },
+                                  "Property": "Priority Tier Number"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "2D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#F0C050'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Helper Measure"
+                                    }
+                                  },
+                                  "Property": "Priority Tier Number"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "1D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#F64E00'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "gold_fact_country_kpi.PriorityTier"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "gold_fact_country_kpi.PriorityTier"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b51ffdcba0999407008e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_country"
+              }
+            },
+            "Property": "CountryName"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "016140dc6d80e4c85d6c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_fact_country_kpi"
+              }
+            },
+            "Property": "Avg Malaria Risk Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "835c65af993c7718120c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Health System"
+              }
+            },
+            "Property": "Avg Health System Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9e97bd5c863ba957b61e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PSI Programme"
+              }
+            },
+            "Property": "Avg PSI Program Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c0f6e37336094cd74213",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Overall Score and Prioritization"
+              }
+            },
+            "Property": "Avg Overall PSI Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6759853b4c017d26e0e1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "gold_fact_country_kpi"
+              }
+            },
+            "Property": "PriorityTier"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

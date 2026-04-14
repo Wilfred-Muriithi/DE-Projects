@@ -1,0 +1,75 @@
+table 'Overall Score and Prioritization'
+	lineageTag: 242346c2-cf23-418c-835a-fd8a66f6d28a
+
+	calculationGroup
+		precedence: 2
+
+		calculationItem 'Calculation item' = SELECTEDMEASURE()
+
+	measure 'Avg Overall PSI Score' =
+			
+			ROUND(AVERAGE(gold_fact_country_kpi[OverallPSIScore]), 2)
+		lineageTag: 74c3b8ef-4692-4d6c-b153-653c963f7df4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Countries Monitored' =
+			
+			DISTINCTCOUNT(gold_fact_country_kpi[CountryKey])
+		formatString: 0
+		lineageTag: 2b2f0987-635e-45fb-a4ca-a6864791ba69
+
+	measure 'Priority 1 Countries' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(gold_fact_country_kpi[CountryKey]),
+			    gold_fact_country_kpi[PriorityTier] = "Priority 1 — Immediate Action"
+			)
+		formatString: 0
+		lineageTag: 7eb52df4-94ff-44e9-8179-0ff2caf35705
+
+	measure 'Priority 2 Countries' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(gold_fact_country_kpi[CountryKey]),
+			    gold_fact_country_kpi[PriorityTier] = "Priority 2 — Accelerate"
+			)
+		formatString: 0
+		lineageTag: dfd6b2d3-6847-490f-9e06-3bf9d91ee8f1
+
+	measure 'On Track Countries' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(gold_fact_country_kpi[CountryKey]),
+			    gold_fact_country_kpi[PriorityTier] = "On Track"
+			)
+		formatString: 0
+		lineageTag: 762ee216-308a-4779-bdc7-0a6c238d29a6
+
+	measure 'Priority 3 Countries' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(gold_fact_country_kpi[CountryKey]),
+			    gold_fact_country_kpi[PriorityTier] = "Priority 3 — Monitor"
+			)
+		formatString: 0
+		lineageTag: 809d4527-1a75-47a9-bd7b-1961207472ec
+
+	column 'Calculation group column'
+		dataType: string
+		lineageTag: afba0ee0-393b-4e77-b061-575253daa886
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ordinal
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e8c2e4f-18bf-4762-88ac-08f3f6265f38
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

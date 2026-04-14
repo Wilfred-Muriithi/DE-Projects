@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "sm_malaria_psi"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "02fd2005-00b7-b16a-4cae-7b9f8623ce09"
+  }
+}
