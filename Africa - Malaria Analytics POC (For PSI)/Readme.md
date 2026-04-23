@@ -7,8 +7,12 @@
 ![Status](https://img.shields.io/badge/Status-Proof--of--Concept-brightgreen)
 
 ---
+⚠️ This is an independent portfolio project built by Wilfred Kihara as a proof of concept. PSI program data used here is entirely synthetic. This project is not affiliated with or endorsed by Population Services International.
+
 
 ##  Overview
+Malaria kills 600,000+ people annually, mostly in Sub-Saharan Africa. Yet health program managers often lack timely, integrated data to prioritise where interventions will have the most impact. This project builds an end-to-end data engineering pipeline — ingesting epidemiological, economic, and program data across 18 SSA countries — and delivers a composite priority scoring model to support data-driven allocation decisions.
+
 This project is a **PSI-aligned malaria program performance analytics solution** demonstrating a full **end-to-end cloud data engineering and BI workflow** for public health decision-making.
 
 It transforms raw epidemiological, economic, and program data into **actionable KPIs and country prioritization tiers** across **18 Sub-Saharan African countries**.
@@ -50,10 +54,9 @@ Bronze → Silver → Gold → Semantic Model → Power BI
 ##  Data Pipeline
 
 ### Data Sources
-- WHO GHO  
-- WHO Africa Observatory  
-- World Bank  
-- Synthetic PSI dataset  
+- WHO GHO — MALARIA_CASES (incidence per 1,000 population at risk, 2000–2023)
+- World Bank and WHO Africa Observatory — Health Nutrition and Population dataset (GDP per capita, health expenditure % of GDP)
+- Synthetic PSI dataset — modelled after DISC project intervention KPIs (cost per commodity delivered, distribution coverage %)  
 
 ### Key Features
 - API-based ingestion  
