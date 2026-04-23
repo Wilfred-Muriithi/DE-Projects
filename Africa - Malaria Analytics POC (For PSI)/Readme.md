@@ -169,10 +169,20 @@ OverallPSIScore =
 
 ---
 
+##  Known Limitations
+
+- PSI program data is synthetic — real intervention KPIs would require PSI internal systems access
+- WHO GHO incidence estimates carry confidence intervals not currently propagated through the scoring model
+- Priority tier thresholds (1.5 SD, 0.5 SD) are based on statistical convention, not empirically validated against program outcomes
+- Country cohort is fixed at 18 SSA countries — expanding would shift all Z-scores and re-rank existing countries 
+
+---
+
 ##  Future Enhancements
 
-- Real-time streaming  
-- ML predictions  
-- Geospatial analytics  
+- Outbreak forecasting: Prophet-based time-series model on incidence trends to generate 12-month risk forecasts at country level, surfaced as a Power BI "forecast ribbon" alongside actuals
+- Geospatial layer: Sub-national drill-down using WHO subnational burden estimates + Fabric's native geospatial support
+- Real-time ingestion: Replace batch API pulls with Event Hubs streaming for near-real-time program performance monitoring (aligned with DISC project's digital health surveillance work)
+- MLOps pipeline: Feature pipeline → model registry → automated retraining trigger when incidence data updates, tracked with MLflow  
 
 
