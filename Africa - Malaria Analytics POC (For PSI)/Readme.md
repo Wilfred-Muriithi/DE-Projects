@@ -4,7 +4,7 @@
 ![Power BI](https://img.shields.io/badge/PowerBI-Analytics-yellow)
 ![Spark](https://img.shields.io/badge/Apache-Spark-orange)
 ![Delta](https://img.shields.io/badge/Delta-Lakehouse-green)
-![Status](https://img.shields.io/badge/Project-Production--Ready-brightgreen)
+![Status](https://img.shields.io/badge/Project-Proof-of-Concept-brightgreen)
 
 ---
 
