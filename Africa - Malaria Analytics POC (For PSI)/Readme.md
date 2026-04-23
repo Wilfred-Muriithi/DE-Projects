@@ -7,7 +7,7 @@
 ![Status](https://img.shields.io/badge/Status-Proof--of--Concept-brightgreen)
 
 ---
-⚠️ This is an independent portfolio project built by Wilfred Kihara as a proof of concept. PSI program data used here is entirely synthetic. This project is not affiliated with or endorsed by Population Services International.
+⚠️ This is an independent portfolio project built as a proof of concept. PSI program data used here is entirely synthetic. This project is not affiliated with or endorsed by Population Services International.
 
 
 ##  Overview
